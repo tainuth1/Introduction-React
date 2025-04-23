@@ -1,13 +1,11 @@
 import "./../styles/Button.css";
 
-const Button = () => {
+//properties
+//reusable
+const Button = (props) => {
   return (
-    <button
-      className="btn"
-      // style={{ backgroundColor: "red", color: "white" }}
-      onClick={() => alert("Hello")}
-    >
-      Click Button
+    <button  className="btn">
+      {props.text}
     </button>
   );
 };

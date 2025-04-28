@@ -4,8 +4,8 @@ import "./../styles/Button.css";
 //reusable
 const Button = (props) => {
   return (
-    <button  className="btn">
-      {props.text}
+    <button className="btn">
+      {props.text} {count}
     </button>
   );
 };

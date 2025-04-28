@@ -10,10 +10,8 @@ const Card = ({ children, text, number, array, boolean, object, alertMes }) => {
         object : {object.id}, {object.name}
       </h2>
       <h2>boolean : {boolean}</h2>
-      <h2>{a}</h2>
       {children}
       <button onClick={() => alertMes("Hello")}>Click</button>
-      <button onClick={count}>Count</button>
     </div>
   );
 };

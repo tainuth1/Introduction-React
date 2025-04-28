@@ -1,15 +1,11 @@
 import "./../styles/Button.css";
 
-//properties
-//reusable
-const Button = (props) => {
+const Button = ({ text, count, setCount }) => {
   return (
-    <button className="btn">
-      {props.text} {count}
+    <button className="btn" onClick={() => setCount(count + 5)}>
+      {text} : {count}
     </button>
   );
 };
 
 export default Button;
-
-// rafce

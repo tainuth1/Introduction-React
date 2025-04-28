@@ -1,6 +1,7 @@
 import "./App.css";
 import Button from "./components/Button";
 import Card from "./components/Card";
+import State from "./components/State";
 
 const App = () => {
   let string = "Click";
@@ -12,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <Button text={string} />
+      {/* <Button text={string} />
       <Button text="Press" />
       <Button text="Touch" />
       <br />
@@ -24,7 +25,9 @@ const App = () => {
         object={{ id: 1001, name: "Heng" }}
         alertMes={alertMes}
         children={<button>Cancel</button>}
-      />
+      /> */}
+
+      <State />
     </>
   );
 };

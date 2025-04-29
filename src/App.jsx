@@ -1,6 +1,7 @@
 import "./App.css";
 import Button from "./components/Button";
 import Card from "./components/Card";
+import SideEffect from "./components/SideEffect";
 import State from "./components/State";
 
 const App = () => {
@@ -27,7 +28,9 @@ const App = () => {
         children={<button>Cancel</button>}
       /> */}
 
-      <State />
+      {/* <State /> */}
+
+      <SideEffect />
     </>
   );
 };

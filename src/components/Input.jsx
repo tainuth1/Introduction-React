@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./../styles/Input.css"
 
 const Input = () => {
   const [userInput, setUserInput] = useState("");
@@ -14,9 +15,9 @@ const Input = () => {
 
   return (
     <div>
-      <h1>{userInput}</h1>
+      <h1 className="text">{userInput}</h1>
 
-      <input type="text" onChange={handleInput} />
+      {/* <input type="text" onChange={handleInput} /> */}
 
       <input
         type="text"

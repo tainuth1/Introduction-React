@@ -6,6 +6,7 @@ import FormData from "./components/FormData";
 import Input from "./components/Input";
 import SideEffect from "./components/SideEffect";
 import State from "./components/State";
+import Todo from "./todoList/Todo";
 
 const App = () => {
   let string = "Click";
@@ -39,7 +40,9 @@ const App = () => {
 
       {/* <Input /> */}
 
-      <FormData />
+      {/* <FormData /> */}
+
+      <Todo />
     </>
   );
 };

@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./todo.css";
 
 const Todo = () => {
   const [taskInput, setTaskInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todo")) || []
+  );
+
+  // useEffect(() => {
+  //   setTodos(JSON.parse(localStorage.getItem("todo")));
+  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,11 +20,26 @@ const Todo = () => {
         completed: false,
       };
       const newTodos = [taskObj, ...todos];
+      localStorage.setItem("todo", JSON.stringify(newTodos));
       setTodos(newTodos);
       setTaskInput("");
     } else {
       alert("Field is empty");
     }
+  };
+
+  const deleteTodo = (id) => {
+    const todosAfterDelete = todos.filter((todo) => todo.id != id);
+    localStorage.setItem("todo", JSON.stringify(todosAfterDelete));
+    setTodos(todosAfterDelete);
+  };
+
+  const markComplete = (id) => {
+    const todosAfterUpdate = todos.map((todo) =>
+      todo.id == id ? { ...todo, completed: !todo.completed } : todo
+    );
+    localStorage.setItem("todo", JSON.stringify(todosAfterUpdate));
+    setTodos(todosAfterUpdate);
   };
 
   return (
@@ -37,9 +58,17 @@ const Todo = () => {
         ) : (
           todos.map((todo) => (
             <li key={todo.id}>
-              <input type="checkbox" />
-              <span>{todo.title}</span>
-              <button>Delete</button>
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => markComplete(todo.id)}
+              />
+              <span
+                style={{ textDecoration: todo.completed && "line-through" }}
+              >
+                {todo.title}
+              </span>
+              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
             </li>
           ))
         )}

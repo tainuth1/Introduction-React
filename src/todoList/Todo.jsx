@@ -6,10 +6,17 @@ const Todo = () => {
   const [todos, setTodos] = useState(
     JSON.parse(localStorage.getItem("todo")) || []
   );
+  const [editId, setEditId] = useState(null);
+  const [updateValue, setUpdateValue] = useState("");
 
   // useEffect(() => {
   //   setTodos(JSON.parse(localStorage.getItem("todo")));
   // }, []);
+
+  useEffect(() => {
+    const todo = todos.find((todo) => todo.id == editId);
+    setUpdateValue(todo ? todo.title : "");
+  }, [editId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,6 +59,16 @@ const Todo = () => {
         />
         <button>Add</button>
       </form>
+      {editId && (
+        <form style={{ marginTop: "10px" }}>
+          <input
+            type="text"
+            value={updateValue}
+            onChange={(e) => setUpdateValue(e.target.value)}
+          />
+          <button>Update</button>
+        </form>
+      )}
       <ul>
         {todos.length == 0 ? (
           <li>List is empty</li>
@@ -68,7 +85,15 @@ const Todo = () => {
               >
                 {todo.title}
               </span>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <div style={{ display: "flex", gap: "7px" }}>
+                <button
+                  style={{ backgroundColor: "dodgerblue" }}
+                  onClick={() => setEditId(todo.id)}
+                >
+                  Edit
+                </button>
+                <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              </div>
             </li>
           ))
         )}

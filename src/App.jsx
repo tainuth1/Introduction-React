@@ -6,6 +6,7 @@ import FormData from "./components/FormData";
 import Input from "./components/Input";
 import SideEffect from "./components/SideEffect";
 import State from "./components/State";
+import Test from "./components/Test";
 import Todo from "./todoList/Todo";
 
 const App = () => {
@@ -21,16 +22,18 @@ const App = () => {
       {/* <Button text={string} />
       <Button text="Press" />
       <Button text="Touch" />
-      <br />
-      <Card
+      <br /> */}
+      {/* <Card
         text="Hello"
         number={number}
         array={[10, 20, 30, 40]}
         boolean={true}
         object={{ id: 1001, name: "Heng" }}
         alertMes={alertMes}
-        children={<button>Cancel</button>}
-      /> */}
+        // child={<button>Cancel</button>}
+      >
+        <button>Hello</button>
+      </Card> */}
 
       {/* <State /> */}
 
@@ -42,7 +45,9 @@ const App = () => {
 
       {/* <FormData /> */}
 
-      <Todo />
+      {/* <Todo /> */}
+
+      <Test />
     </>
   );
 };

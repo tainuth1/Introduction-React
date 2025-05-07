@@ -1,5 +1,5 @@
 
-const Card = ({ children, text, number, array, boolean, object, alertMes }) => {
+const Card = ({ text, number, array, boolean, object, alertMes, children }) => {
   // const { text, number, array, boolean, object } = props;
   return (
     <div style={{ border: "1px solid", display: "inline-block" }}>
@@ -10,6 +10,7 @@ const Card = ({ children, text, number, array, boolean, object, alertMes }) => {
         object : {object.id}, {object.name}
       </h2>
       <h2>boolean : {boolean}</h2>
+      {/* {child} */}
       {children}
       <button onClick={() => alertMes("Hello")}>Click</button>
     </div>

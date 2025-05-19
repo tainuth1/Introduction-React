@@ -2,6 +2,7 @@ import "./App.css";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import ConditionalRendering from "./components/ConditionalRendering";
+import FetchAPI from "./components/FetchAPI";
 import FormData from "./components/FormData";
 import Input from "./components/Input";
 import SideEffect from "./components/SideEffect";
@@ -47,7 +48,9 @@ const App = () => {
 
       {/* <Todo /> */}
 
-      <Test />
+      {/* <Test /> */}
+
+      <FetchAPI />
     </>
   );
 };

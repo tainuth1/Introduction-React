@@ -6,6 +6,7 @@ import FetchAPI from "./components/FetchAPI";
 import FormData from "./components/FormData";
 import Input from "./components/Input";
 import Parent from "./components/memo/Parent";
+import LearnReducer from "./components/reducer/LearnReducer";
 import SideEffect from "./components/SideEffect";
 import State from "./components/State";
 import Test from "./components/Test";
@@ -53,7 +54,9 @@ const App = () => {
 
       {/* <FetchAPI /> */}
 
-      <Parent />
+      {/* <Parent /> */}
+
+      <LearnReducer />
     </>
   );
 };

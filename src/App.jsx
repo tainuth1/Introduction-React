@@ -5,6 +5,7 @@ import ConditionalRendering from "./components/ConditionalRendering";
 import FetchAPI from "./components/FetchAPI";
 import FormData from "./components/FormData";
 import Input from "./components/Input";
+import Parent from "./components/memo/Parent";
 import SideEffect from "./components/SideEffect";
 import State from "./components/State";
 import Test from "./components/Test";
@@ -50,7 +51,9 @@ const App = () => {
 
       {/* <Test /> */}
 
-      <FetchAPI />
+      {/* <FetchAPI /> */}
+
+      <Parent />
     </>
   );
 };

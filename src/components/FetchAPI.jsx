@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 const FetchAPI = () => {
   const [users, setUsers] = useState([]);
-
+  console.log("Fetch again")
   const fetchUsers = async () => {
     try {
       const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -31,4 +31,4 @@ const FetchAPI = () => {
   </div>;
 };
 
-export default FetchAPI;
+export default memo(FetchAPI);
